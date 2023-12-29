@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  database:
+    image: sofianebenhamza/novaedu:db
+    network_mode: "host"
+    restart: unless-stopped
+  application:
+    image: sofianebenhamza/novaedu:app
+    network_mode: "host"
+    restart: unless-stopped 
+    depends_on:
+      - database 
